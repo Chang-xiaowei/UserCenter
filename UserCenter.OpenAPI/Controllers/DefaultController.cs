@@ -14,8 +14,14 @@ namespace UserCenter.OpenAPI.Controllers
         {
             using (UCDbContext ctx=new UCDbContext())
             {
-                ctx.Database.CreateIfNotExists();
-                return "Ok" + id;
+                 return "Ok" + id;
+            }
+        }
+        public string Get(string name)
+        {
+            using (UCDbContext ctx = new UCDbContext())
+            {
+                return "Ok" + name;
             }
         }
     }
