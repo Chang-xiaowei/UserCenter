@@ -16,7 +16,7 @@ namespace UserCenter.OpenAPI.Filter
     public class UCAuthorFilter : IAuthorizationFilter
     {
         public bool AllowMultiple =>true;
-        private IAppInfoService appInfoService { get; set; }
+        public IAppInfoService appInfoService { get; set; }
         public UCAuthorFilter()
         {
             this.appInfoService = appInfoService;

@@ -29,6 +29,7 @@ namespace UserCenter.OpenAPI
             builder.RegisterWebApiFilterProvider(configuration);
             ////一个对象必须是Ioc创建出来的，Ioc容器才会帮我们注入
             builder.RegisterType(typeof(UCAuthorFilter)).PropertiesAutowired();
+
             var services = Assembly.Load("UserCenter.Services");
             builder.RegisterAssemblyTypes(services).Where(type => !type.IsAbstract && typeof(IServiceTag)
             .IsAssignableFrom(type)).AsImplementedInterfaces().SingleInstance().PropertiesAutowired();
